@@ -57,7 +57,8 @@ export default {
           return
         }
         this.$message.success('登录成功')
-        window.sessionStorage.setItem('token', this.loginForm)
+        let tokenData = JSON.stringify(this.loginForm)
+        window.sessionStorage.setItem('token', tokenData)
         this.$router.push('/home')
       })
     }
